@@ -1,0 +1,43 @@
+--
+Working at commands :: screen /dev/ttyACM0
+--
+AT - OK
+AT+CEER - +CEER: No Extended Cause: NEC00 (No Extended Cause to present)
+
+
+Manufacturer	AT+CGMI		Lenovo
+Model Number	AT+CGMM		N5321 gw
+IMEI Number	AT+CGSN		353980050605118
+Software Ver.	AT+CGMR		R3C11
+
+Status		AT+CPAS		+CPAS: 0
+Save Config	AT+CSAS		+CME ERROR: SIM not inserted
+Restore Config	AT+CRES		+CME ERROR: SIM not inserted
+
+ATIn:
+0	N5321
+1	R3C11
+2	-
+3	N5321 gw Mobile Broadband Module
+4,5,6	-
+7	Modem Configuration Profile
+	Product Type       Terminal Adapter
+	Interfaces         RS-232, USB
+	Options            PPP, RLP, V42bis
+8	-
+9	(1.0ERI1900\\MODEM\\N5321 gw83)
+
+
+ATSn?
+0	1	2	3	4	5	6	7	8	9	10
+000	ERROR	128	013	010	008	002	050	002	ERROR	002
+
+-------------
+Every time this command is run random binary spits out... this is cool
+only 98 an 99 work, other numbers generate a NO DIALTONE error or flat out ERROR
+-------------
+Dial access point Command : ATD*99# or ATD*98#
+CONNECT
+~�}#�!}!}!} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�Xd'~~�}#�!}!}"} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�XW}]~~�}#�!}!}#} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�XI�~~�}#�!}!}$} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X1�~~�}#�!}!}%} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X/}'~~�}#�!}!}&} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X}<]~~�}#�!}!}'} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X}"�~~�}#�!}!}(} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X�~~�}#�!}!})} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X�g~~�}#�!}!}*} }=}#}%�#}%}(}"}'}"}!}$}%�}"}&} } } } }%}&�g�X�=~
+NO CARRIER
+

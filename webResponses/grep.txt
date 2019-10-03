@@ -1,0 +1,16 @@
+For more detailed information, please visit http://www.jrsoftware.org/ishelp/index.php?topic=setupcmdline
+        <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+http://sv.symcb.com/sv.crl0f
+https://d.symcb.com/cps0%
+https://d.symcb.com/rpa0
+http://sv.symcd.com0&
+http://sv.symcb.com/sv.crt0
+http://s2.symcb.com0
+http://www.symauth.com/cps0(
+http://www.symauth.com/rpa00
+http://s1.symcb.com/pca3-g5.crl0
+http://ts-ocsp.ws.symantec.com07
++http://ts-aia.ws.symantec.com/tss-ca-g2.cer0
++http://ts-crl.ws.symantec.com/tss-ca-g2.crl0
+http://ocsp.thawte.com0
+.http://crl.thawte.com/ThawteTimestampingCA.crl0

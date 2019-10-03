@@ -1,0 +1,15 @@
+Windows format pei-i386
+
+
+calls home to : http://ts-ocsp.ws.symantec.com/
+When: curl http://ts-ocsp.ws.symantec.com/
+I just get random binary
+When navigated to, I downloaded the file
+
+The file contents are always the same but the name
+is a random 8 charecter alpha-numeric word.
+
+Exexution of random file yeilds no results and
+there appear to be no strings in the file either
+
+hexdump: 0330 010a 0001
