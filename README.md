@@ -19,19 +19,42 @@ Ever since I was six years old I have always dreamed of communicating with my WW
 ## Code
 
 ### 1. Print a bunnch of info
-'''
+```
 ./info.sh
-'''
+```
 
 ### 2. Configure GPS
-'''
+```
 sudo screen /dev/ttyACM1
-'''
-Then type (all caps): AT  
+```
+Then type (all caps):
+```
+AT
+```
 You will be unable to see your inputted text but when you hit enter the device should respond: OK  
+Then type (all caps):
+```
+AT*E2GPSCTL=1,5,1
+```
+Exit the serial connection to /dev/ttyACM2
 
+### 3. Activate GPS
+```
+sudo screen /dev/ttyACM2
+AT*E2GPSNPD
+```
+Hit enter and bam, boom. You got GPS data
 
-### 3. 
+### 4. Wait for satelites
+May work best outdoors
+```
+sudo cat /dev/ttyACM2 | grep -a GPGSA
+```
+
+### 5. Show LAT LON data
+```
+sudo cat /dev/ttyACM2 | grep -a GPRMC
+```
 
 ## License
 
