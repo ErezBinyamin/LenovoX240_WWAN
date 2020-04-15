@@ -56,15 +56,20 @@ Hit enter and bam, boom. You got GPS data
 
 ### 4. Wait for satelites
 May work best outdoors
-```
-sudo cat /dev/ttyACM2 | grep -a GPGSA
+```bash
+sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPGSA | sed -u 's/\$GPGSA,A,3,/Operating in 3D mode with satelites:\t/; s/\$GPGSA,A,2,/Operating in 2D mode with satelites:\t/; s/\$GPGSA,A,1,/Fix not available. Satelites\t/' | cut -d',' -f 1-12
 ```
 
 ### 5. Show LAT LON data
-```
-sudo cat /dev/ttyACM2 | grep -a GPRMC
+```bash
+sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPRMC | stdbuf -oL cut -d',' -f 4-7 | stdbuf -oL tr ',' '\t' | awk '{printf("%.8f %s -%.8f %s\n",$1/100,$2,$3/100,$4)}'
 ```
 
 ## License
 
 Not coppywritten not licenced, take this for free! Use it! Sell it! Change it! do whatever you want!
+
+## References
+ 1. [GPS with Ericcson device](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module#gpsd)  
+ 2. [Using the Ericcson device](http://www.thinkwiki.org/wiki/Ericsson_F3507g_Mobile_Broadband_Module#Using_the_card_as_a_GPS_receiver)  
+ 3. [NMEA codes](http://aprs.gids.nl/nmea/#gsa)  
