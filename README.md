@@ -30,26 +30,27 @@ You may see some output that looks like this:
 > cdc-wdm2 : Ericsson N5321 gw  
 > cdc-wdm3 : N5321 gw Mobile Broadband USIM Port  
 
-We will be connecting to the **N5321 gw Mobile Broadband Data Modem** to configre the device and **N5321 gw Mobile Broadband Modem** to activate the GPS. The GPS data will be outputed on **N5321 gw Mobile Broadband GPS Port**. Given my output that means I will first connect to ```/dev/ttyACM1```, then ```/dev/ttyACM0```, and then ```/dev/ttyACM2```.
+We will be connecting to the **N5321 gw Mobile Broadband Data Modem** to configre the device and **N5321 gw Mobile Broadband GPS Port** to activate the GPS. Given my output that means I will first connect to ```/dev/ttyACM1``` and then ```/dev/ttyACM2```.
 
 ### 2. Configure GPS
+Connect to the **N5321 gw Mobile Broadband Data Modem**
 ```
 sudo screen /dev/ttyACM1
 ```
-Then type (all caps):
+Configure the GPS Stream, frequency and DGPS.
 ```
 AT
-```
-You may be unable to see your inputted text but when you hit enter the device should respond: OK  
-Then type (all caps):
-```
 AT*E2GPSCTL=1,5,1
 ```
-Slam enter, then exit the serial connection .  
+You may be unable to see your inputted text. When you hit enter the system should respond ```OK```
 
 ### 3. Activate GPS
+Connect to the **N5321 gw Mobile Broadband GPS Port**
 ```
 sudo screen /dev/ttyACM2
+```
+Activate the GPS module.
+```
 AT*E2GPSNPD
 ```
 Hit enter and bam, boom. You got GPS data
@@ -59,7 +60,6 @@ May work best outdoors
 ```
 sudo cat /dev/ttyACM2 | grep -a GPGSA
 ```
-
 ### 5. Show LAT LON data
 ```
 sudo cat /dev/ttyACM2 | grep -a GPRMC
