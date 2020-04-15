@@ -13,15 +13,23 @@ Ever since I was six years old I have always dreamed of communicating with my WW
 1. Ericsson N5321 WWAN card
 2. Computer that can connect to said WWAN card
 3. Linux packages:
-	- screen OR cu OR your favorite serial talky program
+	- ```screen``` OR ```cu``` OR your favorite serial talky program
 4. 
 
 ## Code
 
 ### 1. Print a bunnch of info
+```bash
+bash info.sh
 ```
-./info.sh
-```
+You may see some output that looks like this:    
+> ttyACM0 : N5321 gw Mobile Broadband Modem  
+> ttyACM1 : N5321 gw Mobile Broadband Data Modem  
+> ttyACM2 : N5321 gw Mobile Broadband GPS Port  
+> cdc-wdm1 : N5321 gw Mobile Broadband Device Management  
+> cdc-wdm2 : Ericsson N5321 gw  
+> cdc-wdm3 : N5321 gw Mobile Broadband USIM Port  
+We will be connecting to the **N5321 gw Mobile Broadband Data Modem** to configre the device and **N5321 gw Mobile Broadband Modem** to activate the GPS. The GPS data will be outputed on **N5321 gw Mobile Broadband GPS Port**. Given my output that means I will first connect to ```/dev/ttyACM1```, then ```/dev/ttyACM0```, and then ```/dev/ttyACM2```.
 
 ### 2. Configure GPS
 ```
@@ -31,12 +39,12 @@ Then type (all caps):
 ```
 AT
 ```
-You will be unable to see your inputted text but when you hit enter the device should respond: OK  
+You may be unable to see your inputted text but when you hit enter the device should respond: OK  
 Then type (all caps):
 ```
 AT*E2GPSCTL=1,5,1
 ```
-Exit the serial connection to /dev/ttyACM2
+Slam enter, then exit the serial connection .  
 
 ### 3. Activate GPS
 ```
