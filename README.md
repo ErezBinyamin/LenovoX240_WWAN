@@ -29,6 +29,7 @@ You may see some output that looks like this:
 > cdc-wdm1 : N5321 gw Mobile Broadband Device Management  
 > cdc-wdm2 : Ericsson N5321 gw  
 > cdc-wdm3 : N5321 gw Mobile Broadband USIM Port  
+
 We will be connecting to the **N5321 gw Mobile Broadband Data Modem** to configre the device and **N5321 gw Mobile Broadband Modem** to activate the GPS. The GPS data will be outputed on **N5321 gw Mobile Broadband GPS Port**. Given my output that means I will first connect to ```/dev/ttyACM1```, then ```/dev/ttyACM0```, and then ```/dev/ttyACM2```.
 
 ### 2. Configure GPS
