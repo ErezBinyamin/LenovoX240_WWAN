@@ -66,12 +66,17 @@ sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPGSA | sed -u 's/\$GPGSA,A,3,/Operat
 > ...  
 > Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
 > Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
-
+> ...  
 
 ### 5. Show LAT LON data
 ```bash
 sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPRMC | stdbuf -oL cut -d',' -f 4-7 | stdbuf -oL tr ',' '\t' | awk '{printf("%.8f %s -%.8f %s\n",$1/100,$2,$3/100,$4)}'
 ```
+> 42.39248665 N -73.49885369 W  
+> 42.39248665 N -73.49885369 W  
+> 42.39248665 N -73.49885369 W  
+> ...  
+
 
 ## License
 
