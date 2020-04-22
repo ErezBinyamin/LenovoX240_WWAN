@@ -60,6 +60,14 @@ May work best outdoors
 ```bash
 sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPGSA | sed -u 's/\$GPGSA,A,3,/Operating in 3D mode with satelites:\t/; s/\$GPGSA,A,2,/Operating in 2D mode with satelites:\t/; s/\$GPGSA,A,1,/Fix not available. Satelites\t/' | cut -d',' -f 1-12
 ```
+> Fix not available. Satelites	,,,,,,,,,,,  
+> Fix not available. Satelites	,,,,,,,,,,,  
+> Fix not available. Satelites	,,,,,,,,,,,  
+> ...  
+> Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
+> Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
+
+
 ### 5. Show LAT LON data
 ```bash
 sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPRMC | stdbuf -oL cut -d',' -f 4-7 | stdbuf -oL tr ',' '\t' | awk '{printf("%.8f %s -%.8f %s\n",$1/100,$2,$3/100,$4)}'
