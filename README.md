@@ -64,8 +64,9 @@ sudo cat /dev/ttyACM2 | stdbuf -oL grep -a GPGSA | sed -u 's/\$GPGSA,A,3,/Operat
 > Fix not available. Satelites	,,,,,,,,,,,  
 > Fix not available. Satelites	,,,,,,,,,,,  
 > ...  
-> Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
-> Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,  
+> Operating in 3D mode with satelites:	30,11,28,07,17,,,,,,,   
+> ...  
+> Operating in 3D mode with satelites:	01,30,28,11,07,17,08,22,19,,,   
 > ...  
 
 ### 5. Show LAT LON data
@@ -86,3 +87,4 @@ Not coppywritten not licenced, take this for free! Use it! Sell it! Change it! d
  1. [GPS with Ericcson device](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module#gpsd)  
  2. [Using the Ericcson device](http://www.thinkwiki.org/wiki/Ericsson_F3507g_Mobile_Broadband_Module#Using_the_card_as_a_GPS_receiver)  
  3. [NMEA codes](http://aprs.gids.nl/nmea/#gsa)  
+ 4. [AT Commands](https://github.com/asdil12/wwan/wiki/AT-command-set)
