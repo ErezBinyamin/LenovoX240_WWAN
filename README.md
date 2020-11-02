@@ -10,13 +10,11 @@ Ever since I was six years old I have always dreamed of communicating with my WW
 
 ## Installation and Requirements
 
-1. Ericsson N5321 WWAN card
-2. Computer that can connect to said WWAN card
-3. Linux packages:
-	- ```screen``` OR ```cu``` OR your favorite serial talky program
-4. 
+1. [Ericsson N5321 WWAN card](https://www.aliexpress.com/item/1896971552.html)
+2. Computer that can connect to said WWAN card [Lenovo X240](https://www.newegg.com/black-lenovo-thinkpad-x240-mainstream/p/1TS-000E-08MS0?Item=9SIADT27846701)
+3. Some tool to allow you to talk to serial devices: ```sudo apt instsall screen```
 
-## Code
+## Doing stuff
 
 ### 1. Print a bunnch of info
 ```bash
